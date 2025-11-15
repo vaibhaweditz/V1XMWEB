@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — V1XM WEB</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- Header (same as index) -->
+  <header>
+    <div class="logo">V1XM EDITZ</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About Me</a>
+      <a href="#contact">Hire Me</a>
+      <a href="plans.html">Plans</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">About Me</h2>
+      <p class="bio" data-aos="fade-up" data-aos-delay="100">
+        I’m a creative web developer with 2+ years of experience in building modern, responsive, and high-quality websites. I focus on clean UI, smooth performance, and delivering projects that truly help businesses grow.
+      </p>
+
+      <div class="skills" data-aos="fade-up" data-aos-delay="200">
+        <h3>My Developing Skills</h3>
+        <ul>
+          <li>🧱 HTML5</li>
+          <li>🎨 CSS3</li>
+          <li>⚡ JavaScript</li>
+          <li>🖌️ Tailwind / Bootstrap</li>
+          <li>📱 Responsive Design</li>
+          <li>🧠 UI/UX</li>
+          <li>🚀 Optimization</li>
+          <li>🏗️ WordPress</li>
+        </ul>
+      </div>
+  </section>
+  <section class="about" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Mastered Softwares</h2>
+    <p class="bio" data-aos="fade-up" data-aos-delay="100">
+     
+    </p>
+
+    <div class="software-grid" data-aos="fade-up" data-aos-delay="200">
+      
+      <div class="software-card" data-aos="fade-up" data-aos-delay="250">
+        <img src="vs.png" alt="VS Code">
+        <h3>Visual Studio Code</h3>
+        <p>💻✨ VS Code is my go-to editor for smooth, smart, and productive coding with helpful extensions.
+      </div>
+
+      <div class="software-card" data-aos="fade-up" data-aos-delay="350">
+        <img src="github.png" alt="Github">
+        <h3>Github</h3>
+        <p>🗂️ GitHub is a secure and professional platform where I store projects, manage versions, and collaborate efficiently with clean workflows.
+      </div>
+
+      <div class="software-card" data-aos="fade-up" data-aos-delay="450">
+        <img src="wordpress.png" alt="WordPress">
+        <h3>WordPress</h3>
+        <p>⚙️ WordPress is a flexible website-building platform where I design, customize, and manage professional sites using powerful tools and plugins.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn primary" data-aos="fade-up" data-aos-delay="500">⬅ Back to Home</a>
+  </div>
+</section>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+  <div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+</body>
+</html>
