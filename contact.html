@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | V1XM WEB</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f6ff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056ff;
+      font-size: 32px;
+    }
+
+    .contact-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .info, .form {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .info h2 {
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      margin: 6px 0;
+      color: #333;
+      font-size: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #0056ff;
+      border: none;
+      color: #fff;
+      font-size: 17px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #003fcc;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact V1XM WEB</h1>
+
+    <div class="contact-box">
+      <!-- Contact Info -->
+      <div class="info">
+        <h2>📞 Contact Information</h2>
+        <p><strong>Brand:</strong> V1XM WEB</p>
+        <p><strong>Email:</strong> vaibhaweditz@gmail.com</p>
+        <p><strong>WhatsApp:</strong> 8235057615</p>
+        <p><strong>Service:</strong> Website Development & Digital Solutions</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form">
+        <h2>Send Us a Message</h2>
+
+        <form action="#" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
