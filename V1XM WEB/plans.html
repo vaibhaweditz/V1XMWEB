@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans | V1XM WEB</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+<!-- ===== BACKGROUND VIDEO ===== -->
+<video autoplay loop muted playsinline class="bg-video">
+  <source src="bg.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">V1XM <span>EDITZ</span></div>
+    <nav>
+      <ul>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="plans.html" class="active">Plans</a>
+        <a href="contact.html">Contact</a>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+<section class="plans-section">
+  <h2>Choose Your Web Plan</h2>
+  <div class="plans-container">
+    
+    <div class="plan-card">
+      <h3>Static Website</h3>
+      <p class="price">₹199 <span>/ video</span></p>
+      <ul>
+        <li>Fixed pages</li>
+        <li>Best for small businesses and basic information</li>
+        <li>Low cost and quick delivery</li>
+      </ul>
+    <button onclick="selectPlan('Basic Plan', 199)">Select Basic</button>
+    </div>
+
+    <div class="plan-card popular">
+      <div class="badge">Most Popular</div>
+      <h3>E-Commerce Website</h3>
+      <p class="price">₹299 <span>/ video</span></p>
+      <ul>
+        <li>Full online store with products, cart, and payments</li>
+        <li>Order dashboard and inventory system included</li>
+        <li>Perfect for selling online</li>
+      </ul>
+    <button onclick="selectPlan('Standard Plan', 299)">Select Standard</button>
+    </div>
+
+    <div class="plan-card">
+      <h3>Premium Plan</h3>
+      <p class="price">₹499 <span>/ video</span></p>
+      <ul>
+        <li>Full Cinematic Edit</li>
+        <li>SFX + VFX + Color LUT</li>
+        <li>4K Ultra Export</li>
+      </ul>
+    <button onclick="selectPlan('Premium Plan', 499)">Select Premium</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script>
+  function selectPlan(name, price) {
+    const selectedPlan = { name, price };
+    localStorage.setItem("selectedPlan", JSON.stringify(selectedPlan));
+    console.log("✅ Plan selected:", selectedPlan);
+  }
+</script>
+</script>
+<script>
+function selectPlan(name, price) {
+  localStorage.setItem("selectedPlanName", name);
+  localStorage.setItem("selectedPlanPrice", price);
+  alert(`${name} selected! Redirecting...`);
+  window.location.href = "client-details.html";
+}
+</script>
+</body>
+</html>
