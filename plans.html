@@ -1,95 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plans | V1XM WEB</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V1XM WEB — Plans</title>
+  <style>
+    body,html{
+      margin:0; padding:0; font-family:Poppins, sans-serif; color:white;
+    }
+    .bg-video{
+      position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;
+    }
+    .container{
+      max-width:1200px; margin:auto; padding:40px 20px;
+    }
+    h1{
+      text-align:center; font-size:48px; margin-bottom:30px; text-transform:uppercase; letter-spacing:2px;
+    }
+    .plans{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;
+    }
+    .card{
+      background:rgba(0,0,0,0.85);
+      padding:25px;
+      border-radius:20px;
+      backdrop-filter:blur(4px);
+      border:1px solid rgba(255,255,255,0.25);
+      transition:0.3s;
+    }
+    .card:hover{ transform:translateY(-8px); background:rgba(0,0,0,0.45); }
+    .card h2{ margin:0 0 10px 0; font-size:24px; }
+    .card p{ margin:0 0 10px 0; line-height:1.6; }
+
+    /* Premium Button Style */
+    .select-btn{
+      width:100%;
+      padding:12px 0;
+      margin-top:15px;
+      background:linear-gradient(135deg,#00c6ff,#0072ff);
+      border:none;
+      border-radius:12px;
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s ease;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+    .select-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 16px rgba(0,0,0,0.45);
+      opacity:0.9;
+    }
+    footer{
+      margin-top:50px;
+    }
+  </style>
 </head>
 <body>
-<!-- ===== BACKGROUND VIDEO ===== -->
-<video autoplay loop muted playsinline class="bg-video">
-  <source src="bg.mp4" type="video/mp4">
-</video>
-<div class="video-overlay"></div>
+  <video class="bg-video" autoplay loop muted>
+    <source src="bg.mp4" type="video/mp4" />
+  </video>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="logo">V1XM <span>EDITZ</span></div>
-    <nav>
-      <ul>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="plans.html" class="active">Plans</a>
-        <a href="contact.html">Contact</a>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <h1>Our Website Plans</h1>
 
-  <!-- MAIN CONTENT -->
-<section class="plans-section">
-  <h2>Choose Your Web Plan</h2>
-  <div class="plans-container">
-    
-    <div class="plan-card">
-      <h3>Static Website</h3>
-      <p class="price">₹199 <span>/ video</span></p>
-      <ul>
-        <li>Fixed pages</li>
-        <li>Best for small businesses and basic information</li>
-        <li>Low cost and quick delivery</li>
-      </ul>
-    <button onclick="selectPlan('Basic Plan', 199)">Select Basic</button>
+    <div class="plans">
+
+<div class="plan-card">
+  <h3>Business Website</h3>
+  <p class="price">₹1999</p>
+  <ul>
+    <li>Modern Company Website</li>
+    <li>Service Pages + Contact Form</li>
+    <li>Fast & Mobile Friendly</li>
+  </ul>
+  <button onclick="selectPlan('Business Website',1999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Portfolio Website</h3>
+  <p class="price">₹999</p>
+  <ul>
+    <li>Showcase Your Work</li>
+    <li>Gallery + About Page</li>
+    <li>Clean Modern Layout</li>
+  </ul>
+  <button onclick="selectPlan('Portfolio Website',999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>E-Commerce Website</h3>
+  <p class="price">₹4999</p>
+  <ul>
+    <li>Online Store + Cart</li>
+    <li>Payment Gateway Ready</li>
+    <li>Product Management</li>
+  </ul>
+  <button onclick="selectPlan('E-Commerce Website',4999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Blogging Website</h3>
+  <p class="price">₹1999</p>
+  <ul>
+    <li>SEO Friendly Blogs</li>
+    <li>Easy Post Management</li>
+    <li>Responsive Layout</li>
+  </ul>
+  <button onclick="selectPlan('Blogging Website',1999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>News Website</h3>
+  <p class="price">₹2499</p>
+  <ul>
+    <li>Breaking News Layout</li>
+    <li>Category System</li>
+    <li>Fast Loading Pages</li>
+  </ul>
+  <button onclick="selectPlan('News Website',2499)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Educational Website</h3>
+  <p class="price">₹999</p>
+  <ul>
+    <li>Courses & Info Pages</li>
+    <li>Student-Friendly UI</li>
+    <li>Clean Professional Design</li>
+  </ul>
+  <button onclick="selectPlan('Educational Website',999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Landing Page</h3>
+  <p class="price">₹999</p>
+  <ul>
+    <li>High Conversion Page</li>
+    <li>Call-to-Action Optimized</li>
+    <li>Beautiful Modern Layout</li>
+  </ul>
+  <button onclick="selectPlan('Landing Page',999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Agency Website</h3>
+  <p class="price">₹1499</p>
+  <ul>
+    <li>Service Showcase</li>
+    <li>Team Sections</li>
+    <li>Sleek Professional Look</li>
+  </ul>
+  <button onclick="selectPlan('Agency Website',1499)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Personal Brand Website</h3>
+  <p class="price">₹1499</p>
+  <ul>
+    <li>About + Services</li>
+    <li>Modern Bio Layout</li>
+    <li>Social Proof Ready</li>
+  </ul>
+  <button onclick="selectPlan('Personal Brand Website',1499)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Travel Website</h3>
+  <p class="price">₹2499</p>
+  <ul>
+    <li>Destination Pages</li>
+    <li>Booking Ready Layout</li>
+    <li>Photo Gallery</li>
+  </ul>
+  <button onclick="selectPlan('Travel Website',2499)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Real-Estate Website</h3>
+  <p class="price">₹2999</p>
+  <ul>
+    <li>Property Listings</li>
+    <li>Inquiry System</li>
+    <li>Modern Grid Layout</li>
+  </ul>
+  <button onclick="selectPlan('Real-Estate Website',2999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Restaurant / Cafe Website</h3>
+  <p class="price">₹1999</p>
+  <ul>
+    <li>Menu Showcase</li>
+    <li>Table Booking Ready</li>
+    <li>Modern UI</li>
+  </ul>
+  <button onclick="selectPlan('Restaurant / Cafe Website',1999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Service Booking Website</h3>
+  <p class="price">₹1499</p>
+  <ul>
+    <li>Online Booking System</li>
+    <li>Service Pages</li>
+    <li>Fast & Responsive</li>
+  </ul>
+  <button onclick="selectPlan('Service Booking Website',1499)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Event Website</h3>
+  <p class="price">₹1999</p>
+  <ul>
+    <li>Event Details</li>
+    <li>Registration Ready</li>
+    <li>Modern Design</li>
+  </ul>
+  <button onclick="selectPlan('Event Website',1999)" class="select-btn">Select Plan</button>
+</div>
+
+<div class="plan-card">
+  <h3>Custom Website</h3>
+  <p class="price">₹7999</p>
+  <ul>
+    <li>Fully Custom Design</li>
+    <li>Any Feature You Want</li>
+    <li>Premium Quality Build</li>
+  </ul>
+  <button onclick="selectPlan('Custom Website',7999)" class="select-btn">Select Plan</button>
+</div>
+
+</div>
+      <div class="card"><h2>2. Portfolio Website$1<button class="select-btn" onclick="selectPlan('Portfolio Website',999)">Select Plan</button>
+</div>
+      <div class="card"><h2>3. E‑Commerce Website$1<button class="select-btn" onclick="selectPlan('E-Commerce Website',4999)">Select Plan</button>
+</div>
+      <div class="card"><h2>4. Blogging Website$1<button class="select-btn" onclick="selectPlan('Blogging Website',1999)">Select Plan</button>
+</div>
+      <div class="card"><h2>5. News Website$1<button class="select-btn" onclick="selectPlan('News Website',2499)">Select Plan</button>
+</div>
+      <div class="card"><h2>6. Educational Website$1<button class="select-btn" onclick="selectPlan('Educational Website',999)">Select Plan</button>
+</div>
+      <div class="card"><h2>7. Landing Page$1<button class="select-btn" onclick="selectPlan('Landing Page',999)">Select Plan</button>
+</div>
+      <div class="card"><h2>8. Agency Website$1<button class="select-btn" onclick="selectPlan('Agency Website',1499)">Select Plan</button>
+</div>
+      <div class="card"><h2>9. Personal Brand Website$1<button class="select-btn" onclick="selectPlan('Personal Brand Website',1499)">Select Plan</button>
+</div>
+      <div class="card"><h2>10. Travel Website$1<button class="select-btn" onclick="selectPlan('Travel Website',2499)">Select Plan</button>
+</div>
+      <div class="card"><h2>11. Real‑Estate Website$1<button class="select-btn" onclick="selectPlan('Real-Estate Website',2999)">Select Plan</button>
+</div>
+      <div class="card"><h2>12. Restaurant / Cafe Website$1<button class="select-btn" onclick="selectPlan('Restaurant / Cafe Website',1999)">Select Plan</button>
+</div>
+      <div class="card"><h2>13. Service Booking Website$1<button class="select-btn" onclick="selectPlan('Service Booking Website',1499)">Select Plan</button>
+</div>
+      <div class="card"><h2>14. Event Website$1<button class="select-btn" onclick="selectPlan('Event Website',1999)">Select Plan</button>
+</div>
+      <div class="card"><h2>15. Custom Website$1<button class="select-btn" onclick="selectPlan('Custom Website',7999)">Select Plan</button>
+</div>
     </div>
 
-    <div class="plan-card popular">
-      <div class="badge">Most Popular</div>
-      <h3>E-Commerce Website</h3>
-      <p class="price">₹299 <span>/ video</span></p>
-      <ul>
-        <li>Full online store with products, cart, and payments</li>
-        <li>Order dashboard and inventory system included</li>
-        <li>Perfect for selling online</li>
-      </ul>
-    <button onclick="selectPlan('Standard Plan', 299)">Select Standard</button>
-    </div>
-
-    <div class="plan-card">
-      <h3>Premium Plan</h3>
-      <p class="price">₹499 <span>/ video</span></p>
-      <ul>
-        <li>Full Cinematic Edit</li>
-        <li>SFX + VFX + Color LUT</li>
-        <li>4K Ultra Export</li>
-      </ul>
-    <button onclick="selectPlan('Premium Plan', 499)">Select Premium</button>
-    </div>
+    <footer id="footer"></footer>
   </div>
-</section>
 
-<!-- FOOTER -->
-<div id="footer"></div>
-<script>
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
-<script>
-  function selectPlan(name, price) {
-    const selectedPlan = { name, price };
-    localStorage.setItem("selectedPlan", JSON.stringify(selectedPlan));
-    console.log("✅ Plan selected:", selectedPlan);
-  }
-</script>
-</script>
-<script>
-function selectPlan(name, price) {
-  localStorage.setItem("selectedPlanName", name);
-  localStorage.setItem("selectedPlanPrice", price);
-  alert(`${name} selected! Redirecting...`);
-  window.location.href = "client-details.html";
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
+  <!-- Smooth Animations + Button Link Added -->
+  <script>
+    // Add fade-in animation
+    document.querySelectorAll('.plan-card').forEach((card, i) => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(30px)';
+      setTimeout(() => {
+        card.style.transition = '0.6s ease';
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+      }, i * 150);
+    });
+
+    // Redirect to Razorpay Webstore
+function selectPlan(){
+  window.location.href = "https://rzp.io/rzp/XUtlDNik";
 }
-</script>
+
+// Ensure all buttons redirect
+document.querySelectorAll('.select-btn').forEach(btn => {
+  btn.onclick = () => window.location.href = "https://rzp.io/rzp/XUtlDNik";
+}););
+    });
+  </script>
 </body>
 </html>
