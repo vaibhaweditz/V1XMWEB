@@ -147,7 +147,79 @@
         </div>
       </div>
     </section>
+<!-- WHY CHOOSE ME MARQUEE -->
+<div class="marquee">
+  <div class="marquee-content">
+    ⭐ Why Choose Me? ⭐ Fast Delivery ⭐ Affordable Pricing ⭐ Modern UI/UX ⭐ SEO Optimized ⭐ Clean Code ⭐
+  </div>
+</div>
 
+<!-- AUTO SCROLLING HIGHLIGHTS -->
+<section class="scroll-section">
+  <div class="scroll-container">
+
+    <!-- Achievements -->
+    <div class="scroll-item glass">
+      <h3>🔥 2+ Years Experience</h3>
+      <p>Professional Web Development</p>
+    </div>
+
+    <div class="scroll-item glass">
+      <h3>👥 152+ Clients</h3>
+      <p>Trusted Worldwide</p>
+    </div>
+
+    <div class="scroll-item glass">
+      <h3>📁 50+ Projects</h3>
+      <p>Delivered Successfully</p>
+    </div>
+
+    <!-- Services -->
+    <div class="scroll-item glass">
+      <h3>🌐 Dynamic Website</h3>
+      <p>Fast, Smart, Responsive</p>
+    </div>
+
+    <div class="scroll-item glass">
+      <h3>🛒 E-Commerce Website</h3>
+      <p>₹4999 Only — Limited Time</p>
+    </div>
+
+    <div class="scroll-item glass">
+      <h3>💼 Portfolio Website</h3>
+      <p>Showcase Your Identity</p>
+    </div>
+
+    <!-- Limited Offer -->
+    <div class="scroll-item offer-box">
+      <h3>⚡ LIMITED TIME OFFER ⚡</h3>
+      <p>Quick Booking Bonus</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- FLIPKART STYLE AUTO SLIDER -->
+<div class="slider-container">
+  <div class="slider">
+
+    <div class="slide"><img src="banner1.png" alt=""></div>
+    <div class="slide"><img src="banner2.png" alt=""></div>
+    <div class="slide"><img src="banner3.png" alt=""></div>
+    <div class="slide"><img src="banner4.png" alt=""></div>
+    <div class="slide"><img src="banner5.png" alt=""></div>
+
+  </div>
+
+  <!-- Arrows -->
+  <div class="slider-btn prev">&#10094;</div>
+  <div class="slider-btn next">&#10095;</div>
+
+  <!-- Dots -->
+  <div class="dots"></div>
+</div>
 
 
     <section id="contact">
@@ -284,6 +356,51 @@
     offset: 100,     // trigger position from bottom
     easing: 'ease-in-out'
   });
+</script>
+<script>
+let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const slider = document.querySelector(".slider");
+const dotsContainer = document.querySelector(".dots");
+
+// Create dots dynamically
+slides.forEach((_, i) => {
+  const dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dotsContainer.appendChild(dot);
+
+  dot.addEventListener("click", () => goToSlide(i));
+});
+
+const dots = document.querySelectorAll(".dots span");
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[currentIndex].classList.add("active");
+}
+
+function goToSlide(i) {
+  currentIndex = i;
+  updateSlider();
+}
+
+document.querySelector(".next").onclick = () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+};
+
+document.querySelector(".prev").onclick = () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
+};
+
+// Auto slide every 6 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}, 6000);
 </script>
 </body>
 </html>
